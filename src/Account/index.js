@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
-import firebase from '../firebase'
+import React from "react"
+import firebase from "../firebase"
+import ProtectedScreen from "../firebase"
+import FirebaseAuthProvider from  "../firebase"
+import SignOut from '../SignOut'
 
-export default class index extends Component {
-  render() {
-    return (
-      <div>
-        Account
-        {firebase.auth().currentUser.email}
-      </div>
-    )
-  }
+
+const index = () => {
+  return (
+    <div>
+      <SignOut></SignOut>
+    </div>
+  )
 }
+
+export default index;
