@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import firebase from "../firebase"
+//import Redirect from 'react-router'
 
 const index = () => {
   const [email, updateEmail] = useState('')
@@ -20,11 +21,14 @@ const index = () => {
     try {
       await firebase.auth().signInWithPopup(provider)
       // history.push("/protected")
+      //Redirect('/account')
     } catch (e) {
       alert(e)
     }
 
   }
+
+  console.log(firebase)
   return (
     <div>
       <input onChange={(e) => updateEmail(e.target.value)}></input>
