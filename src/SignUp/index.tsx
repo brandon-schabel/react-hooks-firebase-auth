@@ -15,7 +15,7 @@ const index = () => {
   }
   return (
     <div>
-      <button onClick={emailPassSignUp}> Google Sign in</button>
+      <button onClick={emailPassSignUp}>Sign Up</button>
       <input onChange={(e) => updateEmail(e.target.value)}></input>
       <input onChange={(e) => updatePassword(e.target.value)}></input>
     </div>
