@@ -2,7 +2,7 @@ import React from "react"
 import { Route, Switch } from "react-router"
 import { Link } from "react-router-dom"
 
-import { SignIn, SignUp, Account, ForgotPassword } from "./components"
+import { SignIn, SignUp, Account, ForgotPassword, UpdatePassword } from "./components"
 import { ROUTES } from "./constants/routes"
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
         <Route path={ROUTES.SIGN_UP} component={SignUp} />
         <Route path={ROUTES.ACCOUNT} component={Account} />
         <Route path={ROUTES.FORGOT_PASS} component={ForgotPassword} />
+        <Route path={ROUTES.UPDATE_PASS} component={UpdatePassword} />
       </Switch>
     </div>
   )

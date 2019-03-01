@@ -1,5 +1,5 @@
 import React from 'react'
-import {signOutUser} from '../firebase/helpers'
+import {signOutUser} from '../../firebase/helpers'
 
 
 const index = () => {
