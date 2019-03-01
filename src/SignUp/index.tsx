@@ -7,7 +7,7 @@ const index = () => {
 
   const emailPassSignUp = async () => {
     try {
-      await firebase.auth.createUserWithEmailAndPassword(email, password)
+      await firebase.auth().createUserWithEmailAndPassword(email, password)
       // history.push("/protected")
     } catch (e) {
       alert(e)

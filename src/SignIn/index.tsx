@@ -7,17 +7,30 @@ const index = () => {
 
   const emailPassSignIn = async () => {
     try {
-      await firebase.auth.signInWithEmailAndPassword(email, password)
+      await firebase.auth().signInWithEmailAndPassword(email, password)
       // history.push("/protected")
     } catch (e) {
       alert(e)
     }
   }
+
+
+  const googleSignIn = async() => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    try {
+      await firebase.auth().signInWithPopup(provider)
+      // history.push("/protected")
+    } catch (e) {
+      alert(e)
+    }
+
+  }
   return (
     <div>
-      <button onClick={emailPassSignIn}>Sign in</button>
       <input onChange={(e) => updateEmail(e.target.value)}></input>
       <input onChange={(e) => updatePassword(e.target.value)}></input>
+      <button onClick={emailPassSignIn}>Sign in</button>
+      <button onClick={googleSignIn}>Google Sign In</button>
     </div>
   )
 }
