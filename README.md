@@ -1,3 +1,14 @@
+# Setup
+Run "npm install" in project root directory
+
+create a .env file
+remove "sample" from sample.env file so you're left with just ".env", and insert
+your firebase information, the app should then be connected to your firebase instance.
+
+run "npm start" in project root directory to start the app
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
