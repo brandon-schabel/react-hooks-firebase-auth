@@ -1,4 +1,5 @@
-import * as firebase from 'firebase'
+import app from "firebase/app"
+import FirebaseContext, { withFirebase } from "./FirebaseContext"
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -6,13 +7,15 @@ const config = {
   databaseURL: process.env.REACT_APP_DATABASE_URL,
   projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-};
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
+}
 
-firebase.initializeApp(config);
+class Firebase {
+  constructor() {
+    app.initializeApp(config);
+  }
+}
 
-// const fb = {
-//   auth: firebase.auth()
-// }
+export default Firebase
 
-export default firebase;
+export { FirebaseContext, withFirebase }
