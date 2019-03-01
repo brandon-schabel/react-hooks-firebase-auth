@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import firebase from "../firebase"
-import { passwordReset } from "../firebase/helpers"
+import firebase from "../../firebase"
+import { passwordReset } from "../../firebase/helpers"
 
 const index = () => {
   const [email, updateEmail] = useState("")
