@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import firebase from "../firebase"
 import {emailPassSignIn, googleSignIn} from '../firebase/helpers'
-import {passwordReset} from '../firebase/helpers'
 import { Link } from "react-router-dom";
 
 const index = () => {

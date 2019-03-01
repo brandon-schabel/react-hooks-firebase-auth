@@ -1,20 +1,30 @@
 import React from "react"
-import SignIn from "./SignIn"
-import SignUp from "./SignUp"
-import Account from './Account'
-import { Route, Switch} from "react-router";
-import { Link } from "react-router-dom";
+import { Route, Switch } from "react-router"
+import { Link } from "react-router-dom"
+
+import { SignIn, SignUp, Account, ForgotPassword } from "./components"
+import { ROUTES } from "./constants/routes"
 
 function App() {
   return (
     <div className="App">
-      <Link to="/signin"><p>Sign In</p></Link><p></p>
-      <Link to="/signup"><p>Sign Up</p></Link><p></p>
-      <Link to="/account"><p>Account</p></Link><p></p>
+      <Link to={ROUTES.SIGN_IN}>
+        <p>Sign In</p>
+      </Link>
+      <p />
+      <Link to={ROUTES.SIGN_UP}>
+        <p>Sign Up</p>
+      </Link>
+      <p />
+      <Link to={ROUTES.ACCOUNT}>
+        <p>Account</p>
+      </Link>
+      <p />
       <Switch>
-        <Route path="/signin" component={SignIn}></Route>
-        <Route path="/signup" component={SignUp}></Route>
-        <Route path="/account" component={Account}></Route>
+        <Route path={ROUTES.SIGN_IN} component={SignIn} />
+        <Route path={ROUTES.SIGN_UP} component={SignUp} />
+        <Route path={ROUTES.ACCOUNT} component={Account} />
+        <Route path={ROUTES.FORGOT_PASS} component={ForgotPassword} />
       </Switch>
     </div>
   )
