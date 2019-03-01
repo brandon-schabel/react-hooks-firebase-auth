@@ -5,9 +5,9 @@ const index = () => {
   const [email, updateEmail] = useState('')
   const [password, updatePassword] = useState('')
 
-  const emailPassSignIn = async () => {
+  const emailPassSignUp = async () => {
     try {
-      await firebase.auth.signInWithEmailAndPassword(email, password)
+      await firebase.auth.createUserWithEmailAndPassword(email, password)
       // history.push("/protected")
     } catch (e) {
       alert(e)
@@ -15,7 +15,7 @@ const index = () => {
   }
   return (
     <div>
-      <button onClick={emailPassSignIn}> Google Sign in</button>
+      <button onClick={emailPassSignUp}> Google Sign in</button>
       <input onChange={(e) => updateEmail(e.target.value)}></input>
       <input onChange={(e) => updatePassword(e.target.value)}></input>
     </div>
