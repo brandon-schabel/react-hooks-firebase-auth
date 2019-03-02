@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 
-import {emailPassSignUp} from '../../firebase/helpers.js'
+import {FirebaseHelpers} from '../index'
 import {ROUTES} from '../../constants/routes'
 
 
@@ -13,7 +13,7 @@ const index = () => {
     <div>
       <input onChange={(e) => updateEmail(e.target.value)}></input>
       <input type="password" onChange={(e) => updatePass(e.target.value)}></input>
-      <button onClick={() => emailPassSignUp(email, pass)}>Sign Up</button>
+      <button onClick={() => FirebaseHelpers.emailPassSignUp(email, pass)}>Sign Up</button>
       <Link to={ROUTES.SIGN_IN}>Already have an account?</Link>
     </div>
   )

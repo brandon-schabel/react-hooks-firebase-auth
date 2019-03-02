@@ -1,10 +1,10 @@
 import React from 'react'
-import {signOutUser} from '../../firebase/helpers'
+import {FirebaseHelpers} from '../index'
 
 
 const index = () => {
   return (
-    <button onClick={signOutUser}>
+    <button onClick={FirebaseHelpers.signOutUser}>
       Sign Out
     </button>
   )

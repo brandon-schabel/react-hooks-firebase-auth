@@ -1,15 +1,14 @@
 import React, { useState } from "react"
-import firebase from "../../firebase"
-import { passwordReset } from "../../firebase/helpers"
+import { FirebaseHelpers, Firebase } from "../index"
 
 const index = () => {
   const [email, updateEmail] = useState("")
 
-  console.log(firebase)
+  console.log(Firebase)
   return (
     <div>
       <input onChange={e => updateEmail(e.target.value)} />
-      <button onClick={() => passwordReset(email)}>Sign in</button>
+      <button onClick={() => FirebaseHelpers.passwordReset(email)}>Sign in</button>
     </div>
   )
 }

@@ -1,8 +1,8 @@
-import firebase from "./index"
+import Firebase from "./index"
 
 export const emailPassSignIn = async (email, pass) => {
   try {
-    await firebase.auth().signInWithEmailAndPassword(email, pass)
+    await Firebase.auth().signInWithEmailAndPassword(email, pass)
     // history.push("/protected")
   } catch (e) {
     alert(e)
@@ -10,9 +10,9 @@ export const emailPassSignIn = async (email, pass) => {
 }
 
 export const googleSignIn = async () => {
-  const provider = new firebase.auth.GoogleAuthProvider()
+  const provider = new Firebase.auth.GoogleAuthProvider()
   try {
-    await firebase.auth().signInWithPopup(provider)
+    await Firebase.auth().signInWithPopup(provider)
     // history.push("/protected")
     //Redirect('/account')
   } catch (e) {
@@ -22,17 +22,17 @@ export const googleSignIn = async () => {
 
 export const emailPassSignUp = async (email, password) => {
   try {
-    await firebase.auth().createUserWithEmailAndPassword(email, password)
+    await Firebase.auth().createUserWithEmailAndPassword(email, password)
     // history.push("/protected")
   } catch (e) {
     alert(e)
   }
 }
 
-export const signOutUser = () => firebase.auth().signOut()
+export const signOutUser = () => Firebase.auth().signOut()
 
 export const passwordReset = email =>
-  firebase.auth().sendPasswordResetEmail(email)
+  Firebase.auth().sendPasswordResetEmail(email)
 
 export const updatePassword = password =>
-  firebase.auth().currentUser.updatePassword(password)
+  Firebase.auth().currentUser.updatePassword(password)
