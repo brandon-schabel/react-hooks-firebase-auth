@@ -2,9 +2,11 @@ import React, { useState } from "react"
 import { FirebaseHelpers } from "../index"
 
 const index = () => {
-  // const [oldPass, updateOldPass] = useState('')
   const [newPass, updateNewPass] = useState("")
   const [verifyNewPass, updateVerifyNewPass] = useState("")
+
+  const handleUpdateNewPass = (e: any) => updateNewPass(e.target.value)
+  const handleUpdateVerifyPass = (e: any) => updateVerifyNewPass(e.target.value)
 
   const UpdatePassButton = (
     <button onClick={() => FirebaseHelpers.updatePassword(newPass)}>
@@ -13,11 +15,10 @@ const index = () => {
   )
   return (
     <div>
-      {/* <input onChange={(e) => updateOldPass(e.target.value)}></input> */}
-      <input type="password" onChange={e => updateNewPass(e.target.value)} />
+      <input type="password" onChange={handleUpdateNewPass} />
       <input
         type="password"
-        onChange={e => updateVerifyNewPass(e.target.value)}
+        onChange={handleUpdateVerifyPass}
       />
 
       {newPass === verifyNewPass ? (
